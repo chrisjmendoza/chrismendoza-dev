@@ -35,17 +35,30 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 3rem;
+    }
+
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 3rem;
       background: rgba(247,245,240,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .nav-logo {
@@ -73,15 +86,18 @@
 
     .nav-links a:hover { color: var(--ink); }
 
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 8rem 3rem 5rem;
+      padding: 8rem 0 5rem;
       position: relative;
       overflow: hidden;
     }
+
+    .hero .container { position: relative; }
 
     .hero-eyebrow {
       font-size: 0.8rem;
@@ -130,7 +146,7 @@
     .hero-bg-text {
       position: absolute;
       bottom: -0.1em;
-      right: -0.05em;
+      right: -1rem;
       font-family: var(--font-display);
       font-size: clamp(10rem, 22vw, 22rem);
       color: rgba(26,24,20,0.04);
@@ -140,6 +156,7 @@
       letter-spacing: -0.04em;
     }
 
+    /* BUTTONS */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -161,8 +178,9 @@
     .btn-outline { background: transparent; color: var(--ink); border-color: var(--border); }
     .btn-outline:hover { border-color: var(--ink); transform: translateY(-1px); }
 
+    /* SECTIONS */
     section {
-      padding: 6rem 3rem;
+      padding: 6rem 0;
       border-top: 1px solid var(--border);
     }
 
@@ -175,6 +193,7 @@
       margin-bottom: 3rem;
     }
 
+    /* ABOUT */
     .about-layout {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -202,6 +221,7 @@
     .about-body p strong { color: var(--ink); font-weight: 500; }
     .about-body p:last-child { margin-bottom: 0; }
 
+    /* SERVICES */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -241,11 +261,17 @@
       font-weight: 300;
     }
 
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 2.5rem;
-      max-width: 600px;
+      padding: 2rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -269,18 +295,30 @@
 
     .project-card h3 {
       font-family: var(--font-display);
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
     }
 
     .project-card p {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--ink-muted);
       line-height: 1.75;
       font-weight: 300;
     }
 
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* CONTACT */
     .contact-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -336,9 +374,16 @@
       background: var(--surface);
     }
 
+    /* FOOTER */
     footer {
-      padding: 2rem 3rem;
+      padding: 2rem 0;
       border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -348,140 +393,173 @@
 
     footer p { font-size: 0.8rem; color: var(--ink-faint); }
 
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
+      .container { padding: 0 1.5rem; }
+      .nav-inner { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.25rem; }
-      .hero { padding: 7rem 1.5rem 4rem; }
-      section { padding: 4rem 1.5rem; }
+      .hero { padding: 7rem 0 4rem; }
+      section { padding: 4rem 0; }
       .about-layout { grid-template-columns: 1fr; gap: 2rem; }
       .services-grid { grid-template-columns: 1fr; }
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      footer { padding: 1.5rem; }
+      .footer-inner { padding: 0 1.5rem; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#" class="nav-logo">Chris Mendoza</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Chris Mendoza</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <section class="hero" id="home">
-    <div class="hero-bg-text">dev</div>
-    <p class="hero-eyebrow">Web &amp; Software Development</p>
-    <h1>Technology that works for your business — <em>and the people in it.</em></h1>
-    <p class="hero-sub">I build websites and custom software for small businesses that want practical solutions, not corporate ones.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Let's talk</a>
-      <a href="#services" class="btn btn-outline">See what I do</a>
+    <div class="container">
+      <div class="hero-bg-text">dev</div>
+      <p class="hero-eyebrow">Web &amp; Software Development</p>
+      <h1>Technology that works for your business — <em>and the people in it.</em></h1>
+      <p class="hero-sub">I build websites and custom software for small businesses that want practical solutions, not corporate ones.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Let's talk</a>
+        <a href="#services" class="btn btn-outline">See what I do</a>
+      </div>
     </div>
   </section>
 
   <section id="about">
-    <p class="section-label">About</p>
-    <div class="about-layout">
-      <div class="about-aside">
-        <h2>Built from <em>real</em> experience.</h2>
-      </div>
-      <div class="about-body">
-        <p>I'm <strong>Chris Mendoza</strong>, a developer based in the Pacific Northwest with a degree in Application Development and a background that's taken me through IT, restaurants, and a machine shop floor.</p>
-        <p>I've worked alongside the kind of small businesses I now build for — and I know that what you need is something practical that actually works, <strong>not an overcomplicated solution from someone who's never been in the trenches.</strong></p>
-        <p>I build websites and software that fit the way you already operate.</p>
+    <div class="container">
+      <p class="section-label">About</p>
+      <div class="about-layout">
+        <div class="about-aside">
+          <h2>Built from <em>real</em> experience.</h2>
+        </div>
+        <div class="about-body">
+          <p>I'm <strong>Chris Mendoza</strong>, a developer based in the Pacific Northwest with a degree in Application Development and a background that's taken me through IT, restaurants, and a machine shop floor.</p>
+          <p>I've worked alongside the kind of small businesses I now build for — and I know that what you need is something practical that actually works, <strong>not an overcomplicated solution from someone who's never been in the trenches.</strong></p>
+          <p>I build websites and software that fit the way you already operate.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="services">
-    <p class="section-label">Services</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-number">01</div>
-        <h3>Web development</h3>
-        <p>A clean, professional website that represents your business and makes it easy for customers to find and contact you.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">02</div>
-        <h3>Custom software</h3>
-        <p>Tools built around how your business actually works — not generic software you have to work around.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">03</div>
-        <h3>Consultation</h3>
-        <p>Not sure what you need? Let's talk through your business and figure out what technology can actually help.</p>
+    <div class="container">
+      <p class="section-label">Services</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h3>Web development</h3>
+          <p>A clean, professional website that represents your business and makes it easy for customers to find and contact you.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h3>Custom software</h3>
+          <p>Tools built around how your business actually works — not generic software you have to work around.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h3>Consultation</h3>
+          <p>Not sure what you need? Let's talk through your business and figure out what technology can actually help.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="projects">
-    <p class="section-label">Projects</p>
-    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-      <div class="project-card">
-        <span class="project-tag">In development</span>
-        <h3>DocArchivist</h3>
-        <p>A document archiving and management tool built to help businesses organize, search, and retrieve their important files — without the complexity of enterprise software.</p>
-      </div>
-      <div class="project-card">
-        <span class="project-tag">Android · Kotlin</span>
-        <h3>ShaftSchematic</h3>
-        <p>An Android app for generating marine prop-shaft technical drawings with parametric components, live dimensioning, taper calculation, and PDF export. Built for machinists, shipyards, and repair techs who need fast, accurate shaft visualizations without CAD overhead.</p>
-        <a href="https://github.com/chrisjmendoza/ShaftSchematic" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.25rem; font-size: 0.85rem; color: var(--accent); text-decoration: none; font-weight: 500;">
-          View on GitHub
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="project-card">
-        <span class="project-tag">AI · Python</span>
-        <h3>Hephaestus</h3>
-        <p>A local AI software engineering assistant built in Python. Accepts development tasks, scans multi-language repositories, generates structured plans using semantic search and LLM reasoning, and executes steps through a controlled tool layer — focused on safe, incremental development workflows.</p>
-        <a href="https://github.com/chrisjmendoza/Hephaestus" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.25rem; font-size: 0.85rem; color: var(--accent); text-decoration: none; font-weight: 500;">
-          View on GitHub
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="project-card">
-        <span class="project-tag">Mobile · Team Project</span>
-        <h3>Conversate</h3>
-        <p>A collaborative senior capstone app designed to connect people with disabilities to service providers — such as sign language interpreters or sighted companions — making everyday life more accessible. Built as part of a team to solve a real-world accessibility problem.</p>
+    <div class="container">
+      <p class="section-label">Projects</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="project-tag">In development</span>
+          <h3>DocArchivist</h3>
+          <p>A document archiving and management tool built to help businesses organize, search, and retrieve their important files — without the complexity of enterprise software.</p>
+        </div>
+        <div class="project-card">
+          <span class="project-tag">Android · Kotlin</span>
+          <h3>ShaftSchematic</h3>
+          <p>An Android app for generating marine prop-shaft technical drawings with parametric components, live dimensioning, taper calculation, and PDF export. Built for machinists, shipyards, and repair techs who need fast, accurate shaft visualizations without CAD overhead.</p>
+          <a href="https://github.com/chrisjmendoza/ShaftSchematic" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="project-card">
+          <span class="project-tag">AI · Python</span>
+          <h3>Hephaestus</h3>
+          <p>A local AI software engineering assistant built in Python. Accepts development tasks, scans multi-language repositories, generates structured plans using semantic search and LLM reasoning, and executes steps through a controlled tool layer.</p>
+          <a href="https://github.com/chrisjmendoza/Hephaestus" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="project-card">
+          <span class="project-tag">Mobile · Team Project</span>
+          <h3>Conversate</h3>
+          <p>A collaborative senior capstone app designed to connect people with disabilities to service providers — such as sign language interpreters or sighted companions — making everyday life more accessible.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <p class="section-label">Contact</p>
-    <div class="contact-layout">
-      <div>
-        <h2 class="contact-heading">Let's build something <em>useful.</em></h2>
-        <p class="contact-note">Have a project in mind or just want to talk through an idea? I'd love to hear from you.</p>
-        <div class="hero-actions">
-          <a href="/cdn-cgi/l/email-protection#e6858e948f958c8b838882899c87a6818b878f8ac885898b" class="btn btn-primary">Send me an email</a>
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <div class="contact-layout">
+        <div>
+          <h2 class="contact-heading">Let's build something <em>useful.</em></h2>
+          <p class="contact-note">Have a project in mind or just want to talk through an idea? I'd love to hear from you.</p>
+          <div class="hero-actions">
+            <a href="mailto:chrisjmendoza@gmail.com" class="btn btn-primary">Send me an email</a>
+          </div>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:chrisjmendoza@gmail.com" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#6b6760" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="#6b6760" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            </div>
+            chrisjmendoza@gmail.com
+          </a>
+          <a href="https://github.com/chrisjmendoza" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a6.5 6.5 0 00-2.054 12.662c.325.06.444-.141.444-.313v-1.098c-1.806.393-2.187-.872-2.187-.872-.295-.75-.721-.95-.721-.95-.59-.403.044-.395.044-.395.651.046.994.669.994.669.578.99 1.517.704 1.887.538.059-.418.226-.704.411-.866-1.441-.164-2.956-.72-2.956-3.205 0-.708.253-1.286.669-1.739-.067-.164-.29-.823.063-1.716 0 0 .546-.175 1.788.667A6.23 6.23 0 018 5.967c.553.003 1.11.075 1.63.22 1.24-.842 1.786-.667 1.786-.667.354.893.131 1.552.064 1.716.417.453.668 1.031.668 1.739 0 2.492-1.517 3.039-2.963 3.2.233.201.44.597.44 1.203v1.782c0 .174.117.376.447.312A6.5 6.5 0 008 1.5z" fill="#6b6760"/></svg>
+            </div>
+            github.com/chrisjmendoza
+          </a>
+          <a href="https://www.linkedin.com/in/chrisjmendoza/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#6b6760" stroke-width="1.2"/><path d="M4 6.5V12" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/><circle cx="4" cy="4.5" r="0.75" fill="#6b6760"/><path d="M7.5 12V9c0-1.38.84-2.5 2-2.5S11 7.62 11 9v3" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            linkedin.com/in/chrisjmendoza
+          </a>
         </div>
       </div>
-      <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#85e6edf7ecf6efe8e0ebe1eaffe4c5e2e8e4ece9abe6eae8" class="contact-link">
-          <div class="contact-link-icon">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#6b6760" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="#6b6760" stroke-width="1.2" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="__cf_email__" data-cfemail="fb989389928891969e959f94819abb9c969a9297d5989496">[email&#160;protected]</span>
-        </a>
-        <a href="https://github.com/chrisjmendoza" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a6.5 6.5 0 00-2.054 12.662c.325.06.444-.141.444-.313v-1.098c-1.806.393-2.187-.872-2.187-.872-.295-.75-.721-.95-.721-.95-.59-.403.044-.395.044-.395.651.046.994.669.994.669.578.99 1.517.704 1.887.538.059-.418.226-.704.411-.866-1.441-.164-2.956-.72-2.956-3.205 0-.708.253-1.286.669-1.739-.067-.164-.29-.823.063-1.716 0 0 .546-.175 1.788.667A6.23 6.23 0 018 5.967c.553.003 1.11.075 1.63.22 1.24-.842 1.786-.667 1.786-.667.354.893.131 1.552.064 1.716.417.453.668 1.031.668 1.739 0 2.492-1.517 3.039-2.963 3.2.233.201.44.597.44 1.203v1.782c0 .174.117.376.447.312A6.5 6.5 0 008 1.5z" fill="#6b6760"/></svg>
-          </div>
-          github.com/chrisjmendoza
-        </a>
-        <a href="https://www.linkedin.com/in/chrisjmendoza/" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#6b6760" stroke-width="1.2"/><path d="M4 6.5V12" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/><circle cx="4" cy="4.5" r="0.75" fill="#6b6760"/><path d="M7.5 12V9c0-1.38.84-2.5 2-2.5S11 7.62 11 9v3" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/></svg>
-          </div>
-          link
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 Chris Mendoza</p>
+      <p>Pacific Northwest developer</p>
+    </div>
+  </footer>
+
+</body>
+</html>
