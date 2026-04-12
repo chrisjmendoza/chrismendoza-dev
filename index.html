@@ -34,7 +34,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -73,7 +72,6 @@
 
     .nav-links a:hover { color: var(--ink); }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -107,10 +105,7 @@
       animation: fadeUp 0.7s ease forwards 0.35s;
     }
 
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
 
     .hero-sub {
       font-size: 1.1rem;
@@ -144,7 +139,6 @@
       letter-spacing: -0.04em;
     }
 
-    /* BUTTONS */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -161,30 +155,11 @@
       letter-spacing: 0.02em;
     }
 
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: #1e3d2a; border-color: #1e3d2a; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--ink); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--ink); transform: translateY(-1px); }
 
-    .btn-primary:hover {
-      background: #1e3d2a;
-      border-color: #1e3d2a;
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--ink);
-      border-color: var(--border);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--ink);
-      transform: translateY(-1px);
-    }
-
-    /* SECTIONS */
     section {
       padding: 6rem 3rem;
       border-top: 1px solid var(--border);
@@ -199,7 +174,6 @@
       margin-bottom: 3rem;
     }
 
-    /* ABOUT */
     .about-layout {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -214,10 +188,7 @@
       letter-spacing: -0.02em;
     }
 
-    .about-aside h2 em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .about-aside h2 em { font-style: italic; color: var(--accent); }
 
     .about-body p {
       font-size: 1.05rem;
@@ -227,14 +198,9 @@
       margin-bottom: 1.25rem;
     }
 
-    .about-body p strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
+    .about-body p strong { color: var(--ink); font-weight: 500; }
     .about-body p:last-child { margin-bottom: 0; }
 
-    /* SERVICES */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -274,13 +240,11 @@
       font-weight: 300;
     }
 
-    /* PROJECTS */
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
       padding: 2.5rem;
       max-width: 600px;
-      position: relative;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -316,7 +280,6 @@
       font-weight: 300;
     }
 
-    /* CONTACT */
     .contact-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -332,10 +295,7 @@
       margin-bottom: 1rem;
     }
 
-    .contact-heading em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .contact-heading em { font-style: italic; color: var(--accent); }
 
     .contact-note {
       font-size: 1rem;
@@ -375,7 +335,6 @@
       background: var(--surface);
     }
 
-    /* FOOTER */
     footer {
       padding: 2rem 3rem;
       border-top: 1px solid var(--border);
@@ -386,18 +345,13 @@
       gap: 1rem;
     }
 
-    footer p {
-      font-size: 0.8rem;
-      color: var(--ink-faint);
-    }
+    footer p { font-size: 0.8rem; color: var(--ink-faint); }
 
-    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.25rem; }
@@ -496,9 +450,15 @@
         </a>
         <a href="https://github.com/chrisjmendoza" target="_blank" rel="noopener" class="contact-link">
           <div class="contact-link-icon">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a6.5 6.5 0 00-2.054 12.662c.325.06.444-.141.444-.313v-1.098c-1.806.393-2.187-.872-2.187-.872-.295-.75-.721-.95-.721-.95-.59-.403.044-.395.044-.395.651.046 .994.669.994.669.578.99 1.517.704 1.887.538.059-.418.226-.704.411-.866-1.441-.164-2.956-.72-2.956-3.205 0-.708.253-1.286.669-1.739-.067-.164-.29-.823.063-1.716 0 0 .546-.175 1.788.667A6.23 6.23 0 018 5.967c.553.003 1.11.075 1.63.22 1.24-.842 1.786-.667 1.786-.667.354.893.131 1.552.064 1.716.417.453.668 1.031.668 1.739 0 2.492-1.517 3.039-2.963 3.2.233.201.44.597.44 1.203v1.782c0 .174.117.376.447.312A6.5 6.5 0 008 1.5z" fill="#6b6760"/></svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a6.5 6.5 0 00-2.054 12.662c.325.06.444-.141.444-.313v-1.098c-1.806.393-2.187-.872-2.187-.872-.295-.75-.721-.95-.721-.95-.59-.403.044-.395.044-.395.651.046.994.669.994.669.578.99 1.517.704 1.887.538.059-.418.226-.704.411-.866-1.441-.164-2.956-.72-2.956-3.205 0-.708.253-1.286.669-1.739-.067-.164-.29-.823.063-1.716 0 0 .546-.175 1.788.667A6.23 6.23 0 018 5.967c.553.003 1.11.075 1.63.22 1.24-.842 1.786-.667 1.786-.667.354.893.131 1.552.064 1.716.417.453.668 1.031.668 1.739 0 2.492-1.517 3.039-2.963 3.2.233.201.44.597.44 1.203v1.782c0 .174.117.376.447.312A6.5 6.5 0 008 1.5z" fill="#6b6760"/></svg>
           </div>
           github.com/chrisjmendoza
+        </a>
+        <a href="https://www.linkedin.com/in/chrisjmendoza/" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#6b6760" stroke-width="1.2"/><path d="M4 6.5V12" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/><circle cx="4" cy="4.5" r="0.75" fill="#6b6760"/><path d="M7.5 12V9c0-1.38.84-2.5 2-2.5S11 7.62 11 9v3" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          linkedin.com/in/chrisjmendoza
         </a>
       </div>
     </div>
