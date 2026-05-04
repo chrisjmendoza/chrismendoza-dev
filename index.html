@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chris Mendoza — Pacific Northwest developer building websites and custom software for small businesses." />
   <title>Chris Mendoza — Developer</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232d5a3d'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='white'>CM</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -221,6 +222,25 @@
     .about-body p strong { color: var(--ink); font-weight: 500; }
     .about-body p:last-child { margin-bottom: 0; }
 
+    /* SKILLS */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+
+    .skill-tag {
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: var(--surface);
+      color: var(--ink-muted);
+      letter-spacing: 0.02em;
+    }
+
     /* SERVICES */
     .services-grid {
       display: grid;
@@ -273,12 +293,16 @@
       border: 1px solid var(--border);
       padding: 2rem;
       transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 40px rgba(26,24,20,0.08);
     }
+
+    .project-card-top { flex: 1; }
 
     .project-tag {
       display: inline-block;
@@ -293,9 +317,14 @@
       margin-bottom: 1.25rem;
     }
 
+    .project-tag-client {
+      color: #7a4f1a;
+      background: #fdf0dc;
+    }
+
     .project-card h3 {
       font-family: var(--font-display);
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
     }
@@ -317,6 +346,8 @@
       text-decoration: none;
       font-weight: 500;
     }
+
+    .project-link:hover { text-decoration: underline; }
 
     /* CONTACT */
     .contact-layout {
@@ -402,6 +433,7 @@
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .projects-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -411,7 +443,6 @@
       .hero { padding: 7rem 0 4rem; }
       section { padding: 4rem 0; }
       .about-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .services-grid { grid-template-columns: 1fr; }
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer-inner { padding: 0 1.5rem; }
     }
@@ -455,6 +486,20 @@
           <p>I'm <strong>Chris Mendoza</strong>, a developer based in the Pacific Northwest with a degree in Application Development and a background that's taken me through IT, restaurants, and a machine shop floor.</p>
           <p>I've worked alongside the kind of small businesses I now build for — and I know that what you need is something practical that actually works, <strong>not an overcomplicated solution from someone who's never been in the trenches.</strong></p>
           <p>I build websites and software that fit the way you already operate.</p>
+          <div class="skills-grid">
+            <span class="skill-tag">HTML / CSS / JS</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Kotlin</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">React Native</span>
+            <span class="skill-tag">Android</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">C# / .NET</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Vercel / Netlify</span>
+          </div>
         </div>
       </div>
     </div>
@@ -487,34 +532,71 @@
     <div class="container">
       <p class="section-label">Projects</p>
       <div class="projects-grid">
+
         <div class="project-card">
-          <span class="project-tag">In development</span>
-          <h3>DocArchivist</h3>
-          <p>A document archiving and management tool built to help businesses organize, search, and retrieve their important files — without the complexity of enterprise software.</p>
+          <div class="project-card-top">
+            <span class="project-tag project-tag-client">Freelance · Web</span>
+            <h3>Urban City Coffee</h3>
+            <p>A polished marketing site for a real café in Mountlake Terrace, WA — est. 1993. Single-page, mobile-responsive, featuring a tabbed menu, hours bar, photo sections, Google reviews, and an online order CTA. Built with HTML, CSS, and vanilla JS.</p>
+          </div>
         </div>
+
         <div class="project-card">
-          <span class="project-tag">Android · Kotlin</span>
-          <h3>ShaftSchematic</h3>
-          <p>An Android app for generating marine prop-shaft technical drawings with parametric components, live dimensioning, taper calculation, and PDF export. Built for machinists, shipyards, and repair techs who need fast, accurate shaft visualizations without CAD overhead.</p>
+          <div class="project-card-top">
+            <span class="project-tag">AI · Python · React</span>
+            <h3>DocArchivist</h3>
+            <p>A local-first, AI-powered document management system. Drop in a scanned PDF or photo — DocArchivist extracts the text via OCR, applies AI-driven metadata (title, vendor, date, category), and files it into a searchable archive. Built with FastAPI, React, SQLite FTS5, and support for both OpenAI and Anthropic providers.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-tag">Android · Kotlin</span>
+            <h3>ShaftSchematic</h3>
+            <p>An Android app for modeling marine propeller-shaft assemblies. Define a multi-segment shaft, see a live dimensioned canvas preview, calculate tapers, and export a one-page technical PDF — without opening CAD software. Built for machinists, shipyards, and repair technicians.</p>
+          </div>
           <a href="https://github.com/chrisjmendoza/ShaftSchematic" target="_blank" rel="noopener" class="project-link">
             View on GitHub
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
+
         <div class="project-card">
-          <span class="project-tag">AI · Python</span>
-          <h3>Hephaestus</h3>
-          <p>A local AI software engineering assistant built in Python. Accepts development tasks, scans multi-language repositories, generates structured plans using semantic search and LLM reasoning, and executes steps through a controlled tool layer.</p>
+          <div class="project-card-top">
+            <span class="project-tag">AI · Python</span>
+            <h3>Hephaestus</h3>
+            <p>A local AI software engineering agent that accepts a natural-language task, scans a repository using semantic search, generates a structured step-by-step plan via LLM, and executes each step through a controlled tool layer — including file patching, test running, git commits, and GitHub PR creation.</p>
+          </div>
           <a href="https://github.com/chrisjmendoza/Hephaestus" target="_blank" rel="noopener" class="project-link">
             View on GitHub
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
+
         <div class="project-card">
-          <span class="project-tag">Mobile · Team Project</span>
-          <h3>Conversate</h3>
-          <p>A collaborative senior capstone app designed to connect people with disabilities to service providers — such as sign language interpreters or sighted companions — making everyday life more accessible.</p>
+          <div class="project-card-top">
+            <span class="project-tag">React Native · Expo</span>
+            <h3>TackBoard</h3>
+            <p>A corkboard-style note canvas app for Android. Pin sticky notes, index cards, checklists, photos, and links to a large pannable and zoomable canvas. Supports multiple named boards, note rotation and resize, color themes, snap-to-grid, rubber-band multi-select, and persistent local storage.</p>
+          </div>
+          <a href="https://github.com/chrisjmendoza/hanna-notes" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
+
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-tag">C# · .NET · Windows</span>
+            <h3>PortFlow</h3>
+            <p>A Windows backup utility that automatically backs up folders to a USB drive the moment it's plugged in. Identifies drives via a sentinel marker file instead of fragile drive letters, runs silently in the system tray, and uses robocopy under the hood for reliable transfers.</p>
+          </div>
+          <a href="https://github.com/chrisjmendoza/PortFlow" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
