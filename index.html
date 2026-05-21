@@ -349,6 +349,118 @@
 
     .project-link:hover { text-decoration: underline; }
 
+    /* FEATURED PROJECT CARD */
+    .project-card-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+      background: var(--accent-light);
+      border-color: rgba(45,90,61,0.18);
+    }
+
+    .project-card-featured:hover {
+      background: #ddeae1;
+    }
+
+    .project-featured-aside {
+      border-left: 1px solid rgba(45,90,61,0.15);
+      padding-left: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-featured-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .project-featured-label + .project-featured-label {
+      margin-top: 1.75rem;
+    }
+
+    .project-featured-stack {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .project-featured-highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .project-featured-highlights li {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      padding-left: 1.1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .project-featured-highlights li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      opacity: 0.5;
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-field label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      padding: 0.65rem 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--ink);
+      transition: border-color 0.2s;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
     /* CONTACT */
     .contact-layout {
       display: grid;
@@ -434,6 +546,8 @@
     @media (max-width: 900px) {
       .projects-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
+      .project-card-featured { grid-template-columns: 1fr; }
+      .project-featured-aside { border-left: none; border-top: 1px solid rgba(45,90,61,0.15); padding-left: 0; padding-top: 2rem; }
     }
 
     @media (max-width: 768px) {
@@ -485,16 +599,19 @@
         <div class="about-body">
           <p>I'm <strong>Chris Mendoza</strong>, a developer based in the Pacific Northwest with a degree in Application Development and a background that's taken me through IT, restaurants, and a machine shop floor.</p>
           <p>I've worked alongside the kind of small businesses I now build for — and I know that what you need is something practical that actually works, <strong>not an overcomplicated solution from someone who's never been in the trenches.</strong></p>
-          <p>I build websites and software that fit the way you already operate.</p>
+          <p>I build websites and software that fit the way you already operate. When I'm not working with clients, I'm building my own products — <strong>Shiftlog</strong> grew out of a real problem I wanted to solve and is now live and in use by cyclists.</p>
           <div class="skills-grid">
             <span class="skill-tag">HTML / CSS / JS</span>
+            <span class="skill-tag">TypeScript</span>
             <span class="skill-tag">Python</span>
             <span class="skill-tag">Kotlin</span>
             <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
             <span class="skill-tag">React Native</span>
             <span class="skill-tag">Android</span>
             <span class="skill-tag">FastAPI</span>
             <span class="skill-tag">C# / .NET</span>
+            <span class="skill-tag">Supabase</span>
             <span class="skill-tag">SQLite</span>
             <span class="skill-tag">REST APIs</span>
             <span class="skill-tag">Git</span>
@@ -533,16 +650,28 @@
       <p class="section-label">Projects</p>
       <div class="projects-grid">
 
-        <div class="project-card">
+        <div class="project-card project-card-featured">
           <div class="project-card-top">
-            <span class="project-tag">Full-Stack · SaaS</span>
+            <span class="project-tag">Full-Stack · SaaS · Live Product</span>
             <h3>Shiftlog</h3>
-            <p>A mobile-first bike maintenance tracker for cyclists. Log every service, track rides, store receipts, and carry a complete bike history through ownership transfers. Features AI-assisted spec lookup, receipt OCR via Claude, live Strava sync, a freemium Pro tier via Stripe, and a shop mechanic system. Built with Next.js, Supabase, and the Anthropic API. Live and open to the public.</p>
+            <p>A mobile-first bike maintenance tracker for cyclists. Log every service, track rides, store receipts, and carry a complete bike history through ownership transfers. Features AI-assisted spec lookup, receipt OCR via Claude Vision, live Strava sync, a freemium Pro tier via Stripe, and a shop mechanic system. Built with Next.js, Supabase, and the Anthropic API. Live and open to the public.</p>
+            <a href="https://shiftlog.bike" target="_blank" rel="noopener" class="project-link">
+              Visit shiftlog.bike
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
-          <a href="https://shiftlog.bike" target="_blank" rel="noopener" class="project-link">
-            Visit shiftlog.bike
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <div class="project-featured-aside">
+            <p class="project-featured-label">Stack</p>
+            <p class="project-featured-stack">Next.js · Supabase · Anthropic API · Stripe · Vercel</p>
+            <p class="project-featured-label">Highlights</p>
+            <ul class="project-featured-highlights">
+              <li>Receipt OCR via Claude Vision</li>
+              <li>Live Strava OAuth + webhook sync</li>
+              <li>Freemium Pro tier via Stripe</li>
+              <li>Shop mechanic + permissions system</li>
+              <li>PWA installable · public QR profile per bike</li>
+            </ul>
+          </div>
         </div>
 
         <div class="project-card">
@@ -620,30 +749,43 @@
         <div>
           <h2 class="contact-heading">Let's build something <em>useful.</em></h2>
           <p class="contact-note">Have a project in mind or just want to talk through an idea? I'd love to hear from you.</p>
-          <div class="hero-actions">
-            <a href="mailto:chrisjmendoza@gmail.com" class="btn btn-primary">Send me an email</a>
+          <div class="contact-links">
+            <a href="mailto:chrisjmendoza@gmail.com" class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#6b6760" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="#6b6760" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              </div>
+              chrisjmendoza@gmail.com
+            </a>
+            <a href="https://github.com/chrisjmendoza" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a6.5 6.5 0 00-2.054 12.662c.325.06.444-.141.444-.313v-1.098c-1.806.393-2.187-.872-2.187-.872-.295-.75-.721-.95-.721-.95-.59-.403.044-.395.044-.395.651.046.994.669.994.669.578.99 1.517.704 1.887.538.059-.418.226-.704.411-.866-1.441-.164-2.956-.72-2.956-3.205 0-.708.253-1.286.669-1.739-.067-.164-.29-.823.063-1.716 0 0 .546-.175 1.788.667A6.23 6.23 0 018 5.967c.553.003 1.11.075 1.63.22 1.24-.842 1.786-.667 1.786-.667.354.893.131 1.552.064 1.716.417.453.668 1.031.668 1.739 0 2.492-1.517 3.039-2.963 3.2.233.201.44.597.44 1.203v1.782c0 .174.117.376.447.312A6.5 6.5 0 008 1.5z" fill="#6b6760"/></svg>
+              </div>
+              github.com/chrisjmendoza
+            </a>
+            <a href="https://www.linkedin.com/in/chrisjmendoza/" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#6b6760" stroke-width="1.2"/><path d="M4 6.5V12" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/><circle cx="4" cy="4.5" r="0.75" fill="#6b6760"/><path d="M7.5 12V9c0-1.38.84-2.5 2-2.5S11 7.62 11 9v3" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/></svg>
+              </div>
+              linkedin.com/in/chrisjmendoza
+            </a>
           </div>
         </div>
-        <div class="contact-links">
-          <a href="mailto:chrisjmendoza@gmail.com" class="contact-link">
-            <div class="contact-link-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#6b6760" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="#6b6760" stroke-width="1.2" stroke-linejoin="round"/></svg>
-            </div>
-            chrisjmendoza@gmail.com
-          </a>
-          <a href="https://github.com/chrisjmendoza" target="_blank" rel="noopener" class="contact-link">
-            <div class="contact-link-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a6.5 6.5 0 00-2.054 12.662c.325.06.444-.141.444-.313v-1.098c-1.806.393-2.187-.872-2.187-.872-.295-.75-.721-.95-.721-.95-.59-.403.044-.395.044-.395.651.046.994.669.994.669.578.99 1.517.704 1.887.538.059-.418.226-.704.411-.866-1.441-.164-2.956-.72-2.956-3.205 0-.708.253-1.286.669-1.739-.067-.164-.29-.823.063-1.716 0 0 .546-.175 1.788.667A6.23 6.23 0 018 5.967c.553.003 1.11.075 1.63.22 1.24-.842 1.786-.667 1.786-.667.354.893.131 1.552.064 1.716.417.453.668 1.031.668 1.739 0 2.492-1.517 3.039-2.963 3.2.233.201.44.597.44 1.203v1.782c0 .174.117.376.447.312A6.5 6.5 0 008 1.5z" fill="#6b6760"/></svg>
-            </div>
-            github.com/chrisjmendoza
-          </a>
-          <a href="https://www.linkedin.com/in/chrisjmendoza/" target="_blank" rel="noopener" class="contact-link">
-            <div class="contact-link-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#6b6760" stroke-width="1.2"/><path d="M4 6.5V12" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/><circle cx="4" cy="4.5" r="0.75" fill="#6b6760"/><path d="M7.5 12V9c0-1.38.84-2.5 2-2.5S11 7.62 11 9v3" stroke="#6b6760" stroke-width="1.2" stroke-linecap="round"/></svg>
-            </div>
-            linkedin.com/in/chrisjmendoza
-          </a>
-        </div>
+        <!-- Replace YOUR_FORM_ID with your Formspree form ID — formspree.io/forms/new -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="What are you working on?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
       </div>
     </div>
   </section>
