@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chris Mendoza — Pacific Northwest developer building websites and custom software for small businesses." />
+  <meta name="description" content="Chris Mendoza — Pacific Northwest developer building websites, custom software, and full-stack SaaS products for small businesses." />
   <title>Chris Mendoza — Developer</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232d5a3d'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='white'>CM</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -517,6 +517,35 @@
       background: var(--surface);
     }
 
+    /* CONTACT CTA */
+    .contact-cta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.25rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .contact-cta-card > p {
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .contact-cta-card .btn {
+      margin-top: 1.75rem;
+      justify-content: center;
+    }
+
+    .contact-cta-hint {
+      margin-top: 0.85rem;
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+      text-align: center;
+    }
+
     /* FOOTER */
     footer {
       padding: 2rem 0;
@@ -599,7 +628,7 @@
         <div class="about-body">
           <p>I'm <strong>Chris Mendoza</strong>, a developer based in the Pacific Northwest with a degree in Application Development and a background that's taken me through IT, restaurants, and a machine shop floor.</p>
           <p>I've worked alongside the kind of small businesses I now build for — and I know that what you need is something practical that actually works, <strong>not an overcomplicated solution from someone who's never been in the trenches.</strong></p>
-          <p>I build websites and software that fit the way you already operate. When I'm not working with clients, I'm building my own products — <strong>RidePrint</strong> grew out of a real problem I wanted to solve and is now live and in use by cyclists.</p>
+          <p>I build websites and software that fit the way you already operate. When I'm not working with clients, I'm building my own products — <strong>RidePrint</strong> grew out of a real problem I wanted to solve and is now a live SaaS platform with a built-in marketplace, used by cyclists across the country.</p>
           <div class="skills-grid">
             <span class="skill-tag">HTML / CSS / JS</span>
             <span class="skill-tag">TypeScript</span>
@@ -654,7 +683,7 @@
           <div class="project-card-top">
             <span class="project-tag">Full-Stack · SaaS · Live Product</span>
             <h3>RidePrint</h3>
-            <p>A permanent service history and verification platform for bikes — the Carfax of bikes. Riders log every service record, track rides via Strava sync, upload receipts with AI OCR pre-fill, and share a complete verified history via QR code. Shops can log service directly to customer bikes. Built with Next.js, Supabase, Stripe, and Claude Vision.</p>
+            <p>A permanent service history and verification platform for bikes — the Carfax of bikes. Riders log every service record, track rides via Strava sync, upload receipts with AI OCR pre-fill, and share a complete verified history via QR code. Shops log service directly to customer bikes. Sellers list bikes with their verified history attached — giving buyers confidence other marketplaces can't match. Built with Next.js, Supabase, Stripe, and Claude Vision.</p>
             <a href="https://rideprint.com" target="_blank" rel="noopener" class="project-link">
               Visit rideprint.com
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -668,8 +697,8 @@
               <li>Receipt OCR via Claude Vision</li>
               <li>Live Strava OAuth + webhook sync</li>
               <li>Freemium Pro tier via Stripe</li>
-              <li>Shop mechanic + permissions system</li>
-              <li>PWA installable · public QR profile per bike</li>
+              <li>Shop system: shift clock-in, customer lookup, activity audit log</li>
+              <li>Bike marketplace — verified service history at point of sale</li>
             </ul>
           </div>
         </div>
@@ -782,22 +811,14 @@
             </a>
           </div>
         </div>
-        <!-- Replace YOUR_FORM_ID with your Formspree form ID — formspree.io/forms/new -->
-        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          </div>
-          <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="What are you working on?" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send message</button>
-        </form>
+        <div class="contact-cta-card">
+          <p>The best way to start is a direct email. Tell me a bit about what you're working on — a rough idea is enough to go on.</p>
+          <a href="mailto:chrisjmendoza@gmail.com?subject=Project%20Inquiry" class="btn btn-primary">
+            Send an email
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="contact-cta-hint">Usually back within a business day.</p>
+        </div>
       </div>
     </div>
   </section>
