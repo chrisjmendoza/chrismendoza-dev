@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
 <title>What a Program Actually Is — Meeting the Machine</title>
 <meta name="description" content="Chapter 1 of Meeting the Machine, a first programming book that teaches Kotlin from zero against two real Android applications." />
 <meta property="og:type" content="article" />
@@ -361,24 +362,23 @@ dl.gloss { margin:0 0 .4rem 0; }
 
 </style>
 <style>
-    :root { --site-bg:#f7f5f0; --site-ink:#1a1814; --site-muted:#6b6760;
-            --site-accent:#2d5a3d; --site-border:rgba(26,24,20,0.12); }
-    .samplebar { position:sticky; top:0; z-index:50; background:rgba(247,245,240,0.95);
-      -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--site-border); padding:0.85rem 1.5rem;
+    /* Follow the book's own palette so dark mode works instead of breaking. */
+    .samplebar { position:sticky; top:0; z-index:50; background:var(--page-bg);
+      border-bottom:1px solid var(--page-rule); padding:0.85rem 1.5rem;
       display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;
-      font-family:'Poppins','Segoe UI',system-ui,sans-serif; font-size:0.82rem; }
-    .samplebar a { color:var(--site-accent); text-decoration:none; font-weight:500; }
+      font-family:'Poppins','Segoe UI',system-ui,sans-serif; font-size:0.82rem;
+      color:var(--page-soft); }
+    .samplebar a { color:var(--page-link); text-decoration:none; font-weight:500; }
     .samplebar a:hover { text-decoration:underline; }
-    .samplebar .what { color:var(--site-muted); }
-    .samplewrap { max-width:46rem; margin:0 auto; padding:2.5rem 1.5rem 5rem; }
-    .frontmatter { border:1px solid var(--site-border); border-left:3px solid var(--site-accent);
-      background:#fff; padding:1.5rem 1.75rem; margin-bottom:3.5rem; border-radius:2px; }
+    .samplebar .what { color:var(--page-soft); }
+    .samplewrap { max-width:var(--measure,46rem); margin:0 auto; padding:2.5rem 1.5rem 5rem; }
+    .frontmatter { border:1px solid var(--page-rule); border-left:3px solid var(--page-head);
+      padding:1.5rem 1.75rem; margin-bottom:3.5rem; border-radius:2px; }
     .frontmatter h2 { margin-top:0; }
     .frontmatter p:last-child { margin-bottom:0; }
     .samplenote { font-family:'Poppins','Segoe UI',system-ui,sans-serif; font-size:0.78rem;
-      letter-spacing:0.08em; text-transform:uppercase; color:#b0ada8; margin-bottom:0.9rem; }
-    body { background:var(--site-bg); }
+      letter-spacing:0.08em; text-transform:uppercase; color:var(--page-soft); margin-bottom:0.9rem; }
+    body { background:var(--page-bg); color:var(--page-fg); }
     .tablescroll { overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; }
     .samplewrap pre { overflow-x:auto; max-width:100%; }
 </style>
