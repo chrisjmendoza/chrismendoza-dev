@@ -1,0 +1,5 @@
+# Local editor config, not part of the site
+*.code-workspace
+
+# Résumé source document — the published PDF is what the site links
+*.docx
