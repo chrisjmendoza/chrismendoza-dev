@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Résumé — Christopher Mendoza, software developer in Bothell, WA. Web, mobile and desktop applications with AI integration. Available for freelance projects and full-time roles." />
+  <title>Résumé — Christopher Mendoza</title>
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Résumé — Christopher Mendoza" />
+  <meta property="og:description" content="Software developer building and operating production applications across web, Android and desktop." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232d5a3d'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='white'>CM</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --ink: #1a1814;
+      --ink-muted: #6b6760;
+      --ink-faint: #b0ada8;
+      --accent: #2d5a3d;
+      --accent-light: #e8f0eb;
+      --border: rgba(26,24,20,0.1);
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 3rem 5rem;
+    }
+
+    /* BACK BAR */
+    .backbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-bottom: 2rem;
+    }
+
+    .back-link {
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.35rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 2px;
+      text-decoration: none;
+      border: 1.5px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .btn:hover { background: #1e3d2a; transform: translateY(-1px); }
+
+    /* HEADER */
+    header.resume-head {
+      border-top: 3px solid var(--accent);
+      padding-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    header.resume-head h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .resume-title {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .resume-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+    }
+
+    .resume-contact a { color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .resume-contact a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* SECTIONS */
+    .resume-section { margin-bottom: 2.75rem; }
+
+    .resume-section > h2 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .summary {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-muted);
+      font-weight: 300;
+    }
+
+    .summary strong { color: var(--ink); font-weight: 500; }
+
+    /* SKILLS */
+    .skill-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-row:last-child { border-bottom: none; }
+
+    .skill-row dt {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding-top: 0.15rem;
+    }
+
+    .skill-row dd {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ROLE */
+    .role { margin-bottom: 2rem; }
+    .role:last-child { margin-bottom: 0; }
+
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .role-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .role-dates {
+      font-size: 0.82rem;
+      color: var(--ink-faint);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .role-org {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 0.15rem;
+    }
+
+    .role-body {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-top: 0.6rem;
+    }
+
+    /* PROJECT ENTRIES */
+    .projects { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .proj {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 1.75rem;
+    }
+
+    .proj-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .proj-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .proj-name a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(45,90,61,0.35); }
+    .proj-name a:hover { color: var(--accent); }
+
+    .proj-what {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      margin-top: 0.2rem;
+    }
+
+    .proj-stack {
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      margin-top: 0.5rem;
+    }
+
+    .proj-points {
+      list-style: none;
+      margin-top: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .proj-points li {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      line-height: 1.7;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .proj-points li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      opacity: 0.5;
+    }
+
+    /* COMPACT LIST */
+    .compact { list-style: none; }
+
+    .compact li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+    }
+
+    .compact li:last-child { border-bottom: none; }
+    .compact strong { color: var(--ink); font-weight: 500; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+    }
+
+    footer a { color: var(--ink-faint); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 700px) {
+      .page { padding: 1.5rem 1.25rem 3rem; }
+      .skill-row { grid-template-columns: 1fr; gap: 0.25rem; }
+      .proj { padding: 1.25rem; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .backbar { display: none; }
+      .page { max-width: none; padding: 0; }
+      .proj { break-inside: avoid; border-left-width: 2px; }
+      .role { break-inside: avoid; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="backbar">
+      <a href="index.html" class="back-link">← Back to chrismendoza.dev</a>
+      <a href="Christopher-Mendoza-Resume.pdf" class="btn" download>
+        Download PDF
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5v9M4.5 7.5L8 11l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.5v1a1 1 0 001 1h10a1 1 0 001-1v-1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+
+    <header class="resume-head">
+      <h1>Christopher Mendoza</h1>
+      <p class="resume-title">Software Developer · Web, Mobile &amp; Desktop · AI Integration</p>
+      <div class="resume-contact">
+        <span>Bothell, WA (Seattle area)</span>
+        <span>Remote friendly</span>
+        <a href="mailto:chrisjmendoza@gmail.com">chrisjmendoza@gmail.com</a>
+        <a href="https://github.com/chrisjmendoza" target="_blank" rel="noopener">github.com/chrisjmendoza</a>
+        <a href="https://www.linkedin.com/in/chrisjmendoza/" target="_blank" rel="noopener">linkedin.com/in/chrisjmendoza</a>
+      </div>
+    </header>
+
+    <section class="resume-section">
+      <h2>Summary</h2>
+      <p class="summary">Software developer with a B.A.S. in Application Development who designs, builds, and operates production applications end to end across web, Android, and desktop — from APIs, data models, and payments through the testing, CI, monitoring, and security that keep them running. Maintains <strong>more than 5,000 automated tests across four shipped projects</strong> and integrates LLM features into real products. Brings over a decade of hardware and software diagnostics to debugging. <strong>Available for freelance projects and full-time roles.</strong></p>
+    </section>
+
+    <section class="resume-section">
+      <h2>Technical skills</h2>
+      <dl>
+        <div class="skill-row">
+          <dt>Languages</dt>
+          <dd>TypeScript, JavaScript, Kotlin, Python, Java, C#, SQL</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Web &amp; backend</dt>
+          <dd>Next.js, React, Node.js, FastAPI, REST APIs, OAuth and session auth, webhooks, scheduled jobs, Tailwind</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Mobile &amp; desktop</dt>
+          <dd>Android, Jetpack Compose, Room, Hilt, WorkManager, Electron, .NET</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Data</dt>
+          <dd>PostgreSQL, Supabase, SQLite, schema design, versioned migrations, row-level security</dd>
+        </div>
+        <div class="skill-row">
+          <dt>AI</dt>
+          <dd>Anthropic API integration, prompt and system-instruction design, agent tooling, Claude Code, GitHub Copilot</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Quality &amp; ops</dt>
+          <dd>Unit, integration, and instrumented testing, GitHub Actions CI, Vitest, pytest, Sentry, Vercel, Stripe, Git</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="resume-section">
+      <h2>Software development</h2>
+
+      <div class="role">
+        <div class="role-head">
+          <span class="role-title">Independent Software Developer</span>
+          <span class="role-dates">2025 – Present</span>
+        </div>
+        <p class="role-org">PlusOrMinusTwo Designs · Bothell, WA</p>
+        <p class="role-body">Design, build, and maintain production applications end to end, from data models and APIs through front ends, test suites, CI pipelines, release packaging, and production monitoring.</p>
+
+        <div class="projects">
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name"><a href="https://rideprint.com" target="_blank" rel="noopener">RidePrint</a></span>
+              <span class="role-dates">2026 – Present</span>
+            </div>
+            <p class="proj-what">Live service history and resale verification platform — rideprint.com</p>
+            <p class="proj-stack">Next.js · TypeScript · Supabase (PostgreSQL) · Vercel · Stripe</p>
+            <ul class="proj-points">
+              <li>Built and operate a live full-stack platform with Stripe checkout and webhooks, Strava OAuth activity sync, AI receipt OCR through the Anthropic API, and scheduled transactional email.</li>
+              <li>797 automated tests with CI on every push; 48 versioned migrations; hardened with Sentry, row-level security, a nonce-based CSP, and rate limiting.</li>
+            </ul>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name"><a href="https://github.com/chrisjmendoza/postmark" target="_blank" rel="noopener">Postmark</a></span>
+              <span class="role-dates">2026 – Present</span>
+            </div>
+            <p class="proj-what">Android SMS and MMS client · public on GitHub</p>
+            <p class="proj-stack">Kotlin · Jetpack Compose · Room · Hilt · WorkManager</p>
+            <ul class="proj-points">
+              <li>Full default SMS replacement with full-text search, media and voice messaging, scheduled backups, and a statistics dashboard; 1,100+ unit tests plus emulator-based instrumented tests in CI; daily driver at 159,000 messages.</li>
+            </ul>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name"><a href="https://github.com/chrisjmendoza/ShaftSchematic" target="_blank" rel="noopener">ShaftSchematic</a></span>
+              <span class="role-dates">2025 – Present</span>
+            </div>
+            <p class="proj-what">Marine prop-shaft modeling and drawing export app · public on GitHub</p>
+            <p class="proj-stack">Kotlin · Jetpack Compose</p>
+            <ul class="proj-points">
+              <li>Models multi-segment shafts and exports dimensioned PDF drawings, runout sheets, and wear documents, built from daily shop-floor inspection work; 2,200+ unit tests with CI gating merges.</li>
+            </ul>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name">DocArchivist</span>
+              <span class="role-dates">2025 – Present</span>
+            </div>
+            <p class="proj-what">Local-first document archival desktop app · private pre-release, demo on request</p>
+            <p class="proj-stack">Electron · React · TypeScript · Python · FastAPI · SQLite</p>
+            <ul class="proj-points">
+              <li>React front end with a Python FastAPI backend covering OCR, 22 document types, image-to-PDF ingest, and a Windows installer; 865 automated tests and a nine-phase chaos test plan for ingest resilience.</li>
+            </ul>
+          </div>
+
+          <div class="proj">
+            <div class="proj-head">
+              <span class="proj-name"><a href="https://github.com/chrisjmendoza/Hephaestus" target="_blank" rel="noopener">Hephaestus</a></span>
+              <span class="role-dates">2026 – Present</span>
+            </div>
+            <p class="proj-what">Coding agent for repository-level tasks · in progress, public on GitHub</p>
+            <p class="proj-stack">Python · Anthropic API</p>
+            <ul class="proj-points">
+              <li>CLI agent that semantically indexes a repository across six languages and uses LLM reasoning to plan development tasks; planning, indexing, and tool layers implemented and tested.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2>Professional experience</h2>
+
+      <div class="role">
+        <div class="role-head">
+          <span class="role-title">Machinist</span>
+          <span class="role-dates">2022 – Present</span>
+        </div>
+        <p class="role-org">Sound Propeller Services · Seattle, WA</p>
+        <p class="role-body">Machine, inspect, and repair marine propellers and shafts to specification, measuring wear and runout and documenting findings; reached proficiency across machining, inspection, welding, and repair with no prior experience.</p>
+      </div>
+
+      <ul class="compact">
+        <li><span><strong>IT Technician I</strong> · Seattle Central Community College · Seattle, WA</span><span>2016 – 2021</span></li>
+        <li><span><strong>EasyTech Associate</strong> · Staples · Seattle, WA</span><span>2012 – 2015</span></li>
+        <li><span><strong>IT Repair Technician (On-Call)</strong> · Barrister Global Services · Seattle, WA</span><span>2008 – 2011</span></li>
+      </ul>
+    </section>
+
+    <section class="resume-section">
+      <h2>Education</h2>
+      <ul class="compact">
+        <li><span><strong>Bachelor of Applied Science, Application Development</strong> · North Seattle College</span><span>2017</span></li>
+        <li><span><strong>Associate of Science, Computer Science</strong> · Seattle Central College</span><span>2013</span></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>© 2026 Christopher Mendoza</p>
+      <p><a href="index.html">chrismendoza.dev</a> · <a href="Christopher-Mendoza-Resume.pdf" download>Download as PDF</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
