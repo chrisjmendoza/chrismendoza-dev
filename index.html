@@ -666,6 +666,19 @@
 
     .about-aside h2 em { font-style: italic; color: var(--accent); }
 
+    .about-portrait {
+      display: block;
+      width: 100%;
+      max-width: 270px;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      margin-top: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: var(--surface);
+    }
+
     .about-body p {
       font-size: 1.05rem;
       line-height: 1.8;
@@ -861,6 +874,7 @@
       section { padding: 4rem 0; }
       .section-intro { margin-top: -1.5rem; }
       .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .about-portrait { max-width: 190px; margin-top: 1.5rem; }
       .skills-group { grid-template-columns: 1fr; gap: 0.5rem; }
       .skills-group-label { padding-top: 0; }
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1134,6 +1148,7 @@
       <div class="about-layout">
         <div class="about-aside">
           <h2>Built from <em>real</em> experience.</h2>
+          <img src="chris-mendoza.jpg" alt="Chris Mendoza, wearing a grey beanie and hoodie, on the Puget Sound shoreline." class="about-portrait" width="540" height="540" loading="lazy" decoding="async" />
         </div>
         <div class="about-body">
           <p>I'm <strong>Chris Mendoza</strong>, a developer in <strong>Bothell, WA</strong>, just outside Seattle, working as <strong>PlusOrMinusTwo Designs</strong>. I have a B.A.S. in Application Development and a background that's taken me through IT support, restaurants, and — still, today — a machine shop floor.</p>

@@ -3,3 +3,6 @@
 
 # Résumé source document — the published PDF is what the site links
 *.docx
+
+# Raw photo source — only the optimised asset is published
+20260109_110209.jpg
