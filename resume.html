@@ -7,7 +7,7 @@
   <title>Résumé — Christopher Mendoza</title>
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Résumé — Christopher Mendoza" />
-  <meta property="og:description" content="Software developer who designs and operates production applications across web, Android and desktop, built by directing AI coding agents." />
+  <meta property="og:description" content="Software developer who designs, directs, and operates production applications across web, Android and desktop, built with AI coding agents." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232d5a3d'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='white'>CM</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -349,7 +349,7 @@
 
     <section class="resume-section">
       <h2>Summary</h2>
-      <p class="summary">Software developer with a B.A.S. in Application Development who designs and operates production applications across web, Android, and desktop, <strong>built by directing AI coding agents</strong>. I define requirements and architecture, review the output, and use automated tests and CI as the quality gate: <strong>more than 5,000 tests across four shipped projects</strong>, with LLM features integrated into real products. Brings over a decade of hardware and software diagnostics to debugging. <strong>Available for freelance projects and full-time roles.</strong></p>
+      <p class="summary">Software developer with a B.A.S. in Application Development who designs, directs, and operates production applications across web, Android, and desktop, <strong>built with AI coding agents</strong>. Owns requirements, architecture, and review, from APIs, data models, and payments through the testing, CI, monitoring, and security that keep them running: <strong>more than 5,000 automated tests across four shipped projects</strong>. Brings over a decade of hardware and software diagnostics to debugging. <strong>Available for freelance and full-time work.</strong></p>
     </section>
 
     <section class="resume-section">
@@ -361,7 +361,7 @@
         </div>
         <div class="skill-row">
           <dt>Web &amp; backend</dt>
-          <dd>Next.js, React, Node.js, FastAPI, REST APIs, OAuth and session auth, webhooks, scheduled jobs, Tailwind</dd>
+          <dd>Next.js, React, Node.js, FastAPI, REST APIs, OAuth, webhooks, scheduled jobs, Tailwind</dd>
         </div>
         <div class="skill-row">
           <dt>Mobile &amp; desktop</dt>
@@ -403,7 +403,7 @@
             <p class="proj-what">Live service history and resale verification platform — rideprint.com</p>
             <p class="proj-stack">Next.js · TypeScript · Supabase (PostgreSQL) · Vercel · Stripe</p>
             <ul class="proj-points">
-              <li>Designed and operate a live full-stack platform with Stripe checkout and webhooks, Strava OAuth activity sync, AI receipt OCR through the Anthropic API, and scheduled transactional email.</li>
+              <li>Built and operate a live full-stack platform with Stripe checkout and webhooks, Strava OAuth activity sync, AI receipt OCR through the Anthropic API, and scheduled transactional email.</li>
               <li>797 automated tests with CI on every push; 48 versioned migrations; hardened with Sentry, row-level security, a nonce-based CSP, and rate limiting.</li>
             </ul>
           </div>
@@ -416,7 +416,8 @@
             <p class="proj-what">Android SMS and MMS client · public on GitHub</p>
             <p class="proj-stack">Kotlin · Jetpack Compose · Room · Hilt · WorkManager</p>
             <ul class="proj-points">
-              <li>Full default SMS replacement with search, media messaging, and scheduled backups; 1,100+ unit tests plus emulator-based instrumented tests in CI; daily driver at 159,000 messages.</li>
+              <li>Full default SMS replacement with full-text search, photo, video, and voice memo messaging, direct reply notifications, scheduled backups, and a statistics dashboard; 1,100+ unit tests plus emulator-based instrumented tests in CI; daily driver at 159,000 messages.</li>
+              <li>Designed a pure, unit-tested allocator that divides the carrier’s MMS byte budget across every attachment in a message, smallest first, with under-budget images donating their surplus to larger ones, so multi-photo messages compress to fit instead of failing to send.</li>
             </ul>
           </div>
 
@@ -428,7 +429,7 @@
             <p class="proj-what">Marine prop-shaft modeling and drawing export app · public on GitHub</p>
             <p class="proj-stack">Kotlin · Jetpack Compose</p>
             <ul class="proj-points">
-              <li>Models multi-segment shafts and exports dimensioned PDF drawings, runout sheets, and wear documents, built from daily shop-floor inspection work; 2,200+ unit tests with CI gating merges.</li>
+              <li>Models multi-segment shafts and exports dimensioned PDF drawings and runout sheets, drawn from daily shop-floor work; 2,200+ unit tests with CI gating merges.</li>
             </ul>
           </div>
 
@@ -440,7 +441,7 @@
             <p class="proj-what">Local-first document archival desktop app · private pre-release, demo on request</p>
             <p class="proj-stack">Electron · React · TypeScript · Python · FastAPI · SQLite</p>
             <ul class="proj-points">
-              <li>React front end with a Python FastAPI backend covering OCR, 22 document types, image-to-PDF ingest, and a Windows installer; 865 automated tests and a nine-phase chaos test plan for ingest resilience.</li>
+              <li>React front end with a Python FastAPI backend covering OCR, 22 document types, and a Windows installer; 865 tests and a nine-phase fault-injection test plan.</li>
             </ul>
           </div>
 
@@ -449,11 +450,8 @@
               <span class="proj-name"><a href="https://github.com/chrisjmendoza/Hephaestus" target="_blank" rel="noopener">Hephaestus</a></span>
               <span class="role-dates">2026 – Present</span>
             </div>
-            <p class="proj-what">Coding agent for repository-level tasks · in progress, public on GitHub</p>
+            <p class="proj-what">Coding agent for repository-level tasks — indexes a repository and plans development tasks with LLM reasoning · in progress, public on GitHub</p>
             <p class="proj-stack">Python · Anthropic API</p>
-            <ul class="proj-points">
-              <li>CLI agent that semantically indexes a repository across six languages and uses LLM reasoning to plan development tasks.</li>
-            </ul>
           </div>
 
         </div>
@@ -469,7 +467,7 @@
           <span class="role-dates">2022 – Present</span>
         </div>
         <p class="role-org">Sound Propeller Services · Seattle, WA</p>
-        <p class="role-body">Machine, inspect, and repair marine propellers and shafts to specification, measuring wear and runout and documenting findings; reached proficiency across machining, inspection, welding, and repair with no prior experience.</p>
+        <p class="role-body">Machine, inspect, and repair marine propellers and shafts to specification, measuring wear and runout and documenting findings.</p>
       </div>
 
       <ul class="compact">
