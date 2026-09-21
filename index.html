@@ -108,7 +108,10 @@
 
     /* HERO */
     .hero {
+      /* Bottom-anchored, but capped so a tall window doesn't open a void
+         above the headline. svh keeps mobile browser chrome out of it. */
       min-height: 100vh;
+      min-height: min(100svh, 820px);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
