@@ -10,7 +10,7 @@
   <title>Chris Mendoza — Software Developer</title>
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Chris Mendoza — Software Developer" />
-  <meta property="og:description" content="Freelance web and custom software for small businesses, plus shipped products: a live SaaS platform, three Android apps, and AI-assisted technical writing." />
+  <meta property="og:description" content="Freelance web and custom software for small businesses, plus shipped products: a live SaaS platform and three Android apps." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232d5a3d'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='white'>CM</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -159,9 +159,10 @@
       animation: fadeUp 0.7s ease forwards 0.45s;
     }
 
+    .hero-role-note a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(45,90,61,0.35); transition: border-color 0.2s; }
+    .hero-role-note a:hover { border-color: var(--accent); }
+
     /* Equal weight to the primary CTA, distinct enough to read as a different action. */
-    .btn-alt { background: #1e3d2a; border-color: #1e3d2a; }
-    .btn-alt:hover { background: #16301f; border-color: #16301f; }
 
     .hero-sub {
       font-size: 1.1rem;
@@ -603,56 +604,7 @@
 
     .more-link:hover { text-decoration: underline; }
 
-    /* WRITING */
-    .writing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .writing-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .writing-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-style: italic;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.3rem;
-    }
-
-    .writing-sub {
-      font-size: 0.82rem;
-      color: var(--ink-faint);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      margin-bottom: 1.1rem;
-    }
-
-    .writing-body {
-      font-size: 0.9rem;
-      color: var(--ink-muted);
-      line-height: 1.75;
-      font-weight: 300;
-      flex: 1;
-    }
-
-    .writing-status {
-      margin-top: 1.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      font-weight: 500;
-    }
-
+    /* OPEN SOURCE */
     .oss-card {
       margin-top: 1.5rem;
     }
@@ -850,6 +802,76 @@
       text-align: center;
     }
 
+    .contact-form {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      padding: 0.7rem 0.85rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-light);
+    }
+
+    .contact-form textarea { resize: vertical; min-height: 7rem; }
+
+    .contact-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+    .contact-cta-card .contact-form .btn { margin-top: 0.25rem; }
+    .contact-form .btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+    .contact-form-status {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--ink-muted);
+      margin: 0;
+    }
+    .contact-form-status:empty { display: none; }
+    .contact-form-status.is-ok { color: var(--accent); }
+    .contact-form-status.is-error { color: #9b3b2e; }
+    .contact-form-status a { color: inherit; }
+
+    .copy-email {
+      font: inherit;
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+
     /* FOOTER */
     footer {
       padding: 2rem 0;
@@ -889,7 +911,6 @@
     @media (max-width: 900px) {
       .projects-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
-      .writing-grid { grid-template-columns: 1fr; }
       .project-card-featured { grid-template-columns: 1fr; }
       .project-featured-aside { border-left: none; border-top: 1px solid rgba(45,90,61,0.15); padding-left: 0; padding-top: 2rem; }
       .hiring-layout { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -925,7 +946,7 @@
       <ul class="nav-links">
         <li><a href="#work">Work</a></li>
         <li class="nav-secondary"><a href="#services">Services</a></li>
-        <li class="nav-secondary"><a href="#writing">Writing</a></li>
+        <li class="nav-secondary"><a href="#open-source">Open source</a></li>
         <li class="nav-secondary"><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="resume.html" class="nav-resume">Résumé</a></li>
@@ -938,12 +959,34 @@
       <div class="hero-bg-text">dev</div>
       <p class="hero-eyebrow">Web &amp; Software Development</p>
       <h1>Technology that works for your business — <em>and the people in it.</em></h1>
-      <p class="hero-role-note">Also open to software engineering roles, full-time or contract.</p>
+      <p class="hero-role-note"><a href="#hiring">Also open to software engineering roles, full-time or contract →</a></p>
       <p class="hero-sub">I build websites and custom software for small businesses that want practical solutions, not corporate ones — and I ship my own products the same way.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Start a project</a>
         <a href="#work" class="btn btn-outline">See the work</a>
-        <a href="#hiring" class="btn btn-primary btn-alt">Open to work →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <p class="section-label">Services</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h3>Web development</h3>
+          <p>A clean, professional website that represents your business and makes it easy for customers to find and contact you.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h3>Custom software</h3>
+          <p>Tools built around how your business runs — not generic software you have to work around.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h3>Consultation</h3>
+          <p>Not sure what you need? Let's talk through your business and figure out where technology would help — and where it wouldn't.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -967,36 +1010,13 @@
             <p class="hiring-stat-label">RidePrint — a full-stack SaaS platform with payments, third-party OAuth, and paid-tier features, running at rideprint.com.</p>
           </div>
           <div>
-            <p class="hiring-stat-value">5,000+ automated tests</p>
-            <p class="hiring-stat-label">Across four shipped projects, with CI on every push and emulator-based instrumented tests on Android.</p>
+            <p class="hiring-stat-value">6,500+ automated tests</p>
+            <p class="hiring-stat-label">Across five projects, with CI on every push and emulator-based instrumented tests on Android.</p>
           </div>
           <div>
-            <p class="hiring-stat-value">AI-directed, test-verified</p>
-            <p class="hiring-stat-label">I build with AI coding agents and own the requirements, architecture, review, and test suites that make the result trustworthy.</p>
+            <p class="hiring-stat-value">Public code you can read</p>
+            <p class="hiring-stat-label">Postmark, ShaftSchematic, Yearal and the engine visualizer are open on GitHub, with their tests and CI history alongside the source.</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="container">
-      <p class="section-label">Services</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-number">01</div>
-          <h3>Web development</h3>
-          <p>A clean, professional website that represents your business and makes it easy for customers to find and contact you.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-number">02</div>
-          <h3>Custom software</h3>
-          <p>Tools built around how your business actually works — not generic software you have to work around.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-number">03</div>
-          <h3>Consultation</h3>
-          <p>Not sure what you need? Let's talk through your business and figure out what technology can actually help.</p>
         </div>
       </div>
     </div>
@@ -1005,7 +1025,7 @@
   <section id="work">
     <div class="container">
       <p class="section-label">Selected work</p>
-      <p class="section-intro">Products I've built and shipped myself, and site work for local businesses. Every project below went from an empty repository to something people actually use, built with AI coding agents under my direction and gated by automated tests.</p>
+      <p class="section-intro">Products I've built and shipped myself, and site work for local businesses. Every project below started from an empty repository, and every one is gated by automated tests and CI.</p>
 
       <p class="group-heading">Products</p>
       <div class="projects-grid">
@@ -1014,7 +1034,7 @@
           <div class="project-card-top">
             <span class="project-tag">Full-Stack · SaaS · Live Product</span>
             <h3>RidePrint</h3>
-            <p>A permanent service history and resale verification platform for bikes — the Carfax of bikes. Riders keep a maintenance record a buyer can actually trust, shops log work straight onto a customer's bike, and sellers list with that verified history attached, which is a claim no other marketplace can make. Riders log service records, sync rides from Strava, upload receipts that Claude Vision reads and pre-fills, and share the result by QR code. Shop access sits behind a mechanic clock-in gate, and privacy tiers are enforced in application code and again by Postgres row-level security.</p>
+            <p>A permanent service history and resale verification platform for bikes — the Carfax of bikes. Riders keep a maintenance record a buyer can trust, shops log work straight onto a customer's bike, and sellers list with that verified history attached. Riders log service records, sync rides from Strava, upload receipts that Claude Vision reads and pre-fills, and share the result by QR code. Shop access sits behind a mechanic clock-in gate, and privacy tiers are enforced in application code and again by Postgres row-level security.</p>
             <a href="https://rideprint.com" target="_blank" rel="noopener" class="project-link">
               Visit rideprint.com
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1045,7 +1065,7 @@
           </div>
           <dl class="project-meta">
             <dt>Stack</dt><dd>Kotlin · Jetpack Compose · Room · Media3 · WorkManager</dd>
-            <dt>Scale</dt><dd>~40,000 lines of production Kotlin; 1,100+ unit tests plus instrumented tests in CI</dd>
+            <dt>Testing</dt><dd>1,100+ unit tests plus emulator-based instrumented tests, run in CI</dd>
           </dl>
         </div>
 
@@ -1053,7 +1073,7 @@
           <div class="project-card-top">
             <span class="project-tag">Android · Kotlin · Open Source</span>
             <h3>ShaftSchematic</h3>
-            <p>An Android app for modeling marine propeller-shaft assemblies, built out of my own day job inspecting and repairing shafts at a propeller shop, where the drawings were being made by hand because CAD made the work slower rather than faster. A machinist defines a shaft, watches a live dimensioned preview, and exports the one-page technical PDFs a repair job actually needs — without opening CAD at all. Multi-segment shafts with bodies, tapers, threads, liners and bolt slots; schematics, runout sheets, wear documents and undercut drawings, each with a blank write-in variant for marking up on the job.</p>
+            <p>An Android app for modeling marine propeller-shaft assemblies, built out of my own day job inspecting and repairing shafts at a propeller shop, where the drawings were being made by hand because CAD made the work slower rather than faster. A machinist defines a shaft, watches a live dimensioned preview, and exports the one-page technical PDFs a repair job calls for — without opening CAD at all. Multi-segment shafts with bodies, tapers, threads, liners and bolt slots; schematics, runout sheets, wear documents and undercut drawings, each with a blank write-in variant for marking up on the job.</p>
             <a href="https://github.com/chrisjmendoza/ShaftSchematic" target="_blank" rel="noopener" class="project-link">
               View on GitHub
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1061,7 +1081,7 @@
           </div>
           <dl class="project-meta">
             <dt>Stack</dt><dd>Kotlin · Jetpack Compose · DataStore · Android PDF rendering</dd>
-            <dt>Scale</dt><dd>~64,000 lines of production Kotlin; 2,200+ unit tests with CI gating merges</dd>
+            <dt>Testing</dt><dd>2,200+ unit tests, with CI gating every merge</dd>
           </dl>
         </div>
 
@@ -1077,7 +1097,7 @@
           </div>
           <dl class="project-meta">
             <dt>Stack</dt><dd>React · TypeScript · Three.js (R3F) · Zustand · Vite · Vercel</dd>
-            <dt>Scale</dt><dd>1,500+ tests against ~15,000 lines of source; CI runs lint, tests and a production build</dd>
+            <dt>Testing</dt><dd>1,500+ tests; CI runs lint, tests and a production build on every push</dd>
           </dl>
         </div>
 
@@ -1102,7 +1122,7 @@
           <div class="project-card-top">
             <span class="project-tag project-tag-client">Small business · Web</span>
             <h3>Chase Race</h3>
-            <p>A site for a one-man race prep and performance shop in Duvall, WA — 15+ years of experience, 40+ custom cages built, recognized by SCCA, NASA, and LeMons. Showcases services including exhaust, alignment, coilovers, and Miata/MX-5 specialization. Built with the owner and revised to his notes; he's finalizing copy before it goes live under his own domain.</p>
+            <p>A site for a one-man race prep and performance shop in Duvall, WA — 15+ years of experience, 40+ custom cages built, recognized by SCCA, NASA, and LeMons. Showcases services including exhaust, alignment, coilovers, and Miata/MX-5 specialization. Built with the owner and revised to his notes.</p>
             <a href="https://chaserace.netlify.app" target="_blank" rel="noopener" class="project-link">
               View the demo
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1117,7 +1137,7 @@
           <div class="project-card-top">
             <span class="project-tag project-tag-client">Small business · Web</span>
             <h3>Urban City Coffee</h3>
-            <p>A polished marketing site for a café in Mountlake Terrace, WA — est. 1993. Single-page and mobile-responsive, with a tabbed menu, an hours bar, photo sections, Google reviews, and an online-order call to action. Built on spec to show the owner what the shop could have. They're keen to go ahead; the project is parked for now while other priorities take precedence.</p>
+            <p>A polished marketing site for a café in Mountlake Terrace, WA — est. 1993. Single-page and mobile-responsive, with a tabbed menu, an hours bar, photo sections, Google reviews, and an online-order call to action. Built on spec as a concept for the owner.</p>
             <a href="https://urbancitycoffee.netlify.app" target="_blank" rel="noopener" class="project-link">
               View the demo
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1155,33 +1175,11 @@
     </div>
   </section>
 
-  <section id="writing">
+  <section id="open-source">
     <div class="container">
-      <p class="section-label">Writing &amp; open source</p>
-      <p class="section-intro">Two book-length teaching projects, drafted in collaboration with AI against my own public Android codebases, under rules I set before drafting began. Every quoted listing is machine-checked against a pinned commit and every count was measured, not remembered.</p>
+      <p class="section-label">Open source</p>
+      <p class="section-intro">Fixes sent back to the tools I use day to day.</p>
 
-      <p class="group-heading">Writing</p>
-      <div class="writing-grid">
-
-        <div class="writing-card">
-          <h3>Reading the Machine</h3>
-          <p class="writing-sub">377 pages · 16 chapters</p>
-          <p class="writing-body">Teaches software architecture backwards: rather than building a toy system forwards, it walks through two real, public Kotlin/Android codebases and names what is already there. The reader is framed as a developer hired to build them — for a machine shop, and for the Android platform itself — so each architectural decision arrives with the client constraint that caused it.</p>
-          <a href="reading-the-machine-sample.html" class="project-link">Read a sample chapter <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <p class="writing-status">Body complete · unpublished</p>
-        </div>
-
-        <div class="writing-card">
-          <h3>Meeting the Machine</h3>
-          <p class="writing-sub">585 pages · 19 chapters</p>
-          <p class="writing-body">The prequel. Most first books teach a construct and hang it on an invented toy, leaving an enormous gap between the last chapter and a real repository. This one teaches every construct twice — once in five lines you type and run, then again verbatim inside a forty-thousand-line working application, with its real file path. The goal is not to understand the whole listing; it is to recognize the thing you just learned, sitting in grown-up code.</p>
-          <a href="meeting-the-machine-sample.html" class="project-link">Read a sample chapter <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <p class="writing-status">Drafted · PDF and accessible HTML editions both build</p>
-        </div>
-
-      </div>
-
-      <p class="group-heading group-heading-next">Open source</p>
       <div class="oss-card oss-card-first">
         <div>
           <h3>Claude Code Usage Monitor</h3>
@@ -1290,12 +1288,26 @@
           </div>
         </div>
         <div class="contact-cta-card">
-          <p>The best way to start is a direct email. Tell me a bit about what you're working on — a rough idea is enough to go on. If you're hiring, mention the role and I'll send whatever else you need.</p>
-          <a href="mailto:chrisjmendoza@gmail.com?subject=Project%20Inquiry" class="btn btn-primary">
-            Send an email
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-          </a>
-          <p class="contact-cta-hint">Usually back within a business day.</p>
+          <p>Tell me a bit about what you're working on — a rough idea is enough to go on. If you're hiring, mention the role and I'll send whatever else you need.</p>
+          <form class="contact-form" action="https://formspree.io/f/xppwrool" method="POST">
+            <label>Name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>Message
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <input type="text" name="_gotcha" class="contact-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <input type="hidden" name="_subject" value="Website inquiry from chrisjmendoza.com" />
+            <button type="submit" class="btn btn-primary">
+              Send message
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="contact-form-status" role="status" aria-live="polite"></p>
+          </form>
+          <p class="contact-cta-hint">Usually back within a business day. Prefer email? <button type="button" class="copy-email" data-email="chrisjmendoza@gmail.com">Copy my address</button></p>
         </div>
       </div>
     </div>
@@ -1308,6 +1320,55 @@
     </div>
   </footer>
 
+<script>
+  (function () {
+    var EMAIL = 'chrisjmendoza@gmail.com';
+
+    // Contact form: submit in place; fall back to a direct-email prompt if the request fails.
+    // Without JavaScript the form still posts normally and lands on the provider's thank-you page.
+    var form = document.querySelector('.contact-form');
+    if (form) {
+      var status = form.querySelector('.contact-form-status');
+      var submit = form.querySelector('button[type="submit"]');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        submit.disabled = true;
+        status.className = 'contact-form-status';
+        status.textContent = 'Sending\u2026';
+        fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+          .then(function (r) {
+            if (!r.ok) throw new Error(r.status);
+            form.reset();
+            status.textContent = 'Sent \u2014 thanks. I\u2019ll get back to you within a business day.';
+            status.classList.add('is-ok');
+          })
+          .catch(function () {
+            status.innerHTML = 'That didn\u2019t go through. Email me directly at <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.';
+            status.classList.add('is-error');
+          })
+          .then(function () { submit.disabled = false; });
+      });
+    }
+
+    // "Copy my address": clipboard where available, otherwise open the mail client.
+    Array.prototype.forEach.call(document.querySelectorAll('.copy-email'), function (btn) {
+      btn.addEventListener('click', function () {
+        var email = btn.getAttribute('data-email') || EMAIL;
+        var label = btn.textContent;
+        var done = function () {
+          btn.textContent = 'Copied';
+          setTimeout(function () { btn.textContent = label; }, 1600);
+        };
+        var fallback = function () { window.location.href = 'mailto:' + email; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(done, fallback);
+        } else {
+          fallback();
+        }
+      });
+    });
+  })();
+</script>
 
 <!-- Vercel Web Analytics -->
 <script>
